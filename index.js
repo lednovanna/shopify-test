@@ -86,3 +86,17 @@ function displayProducts(products) {
           }
       });
   });
+
+  document.addEventListener("DOMContentLoaded", () => {
+
+    document.body.classList.add("loading");
+  
+    window.addEventListener("load", () => {
+      const preloader = document.getElementById("preloader");
+      preloader.style.opacity = "0";
+      setTimeout(() => {
+        preloader.style.display = "none";
+        document.body.classList.remove("loading"); 
+      }, 500); 
+    });
+  });
